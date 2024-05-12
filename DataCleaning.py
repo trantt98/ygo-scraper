@@ -9,4 +9,5 @@ df = df.rename(columns={'card_name': 'Card Name', 'card_name_english': 'Card Nam
 df['Card Name (German)'] = df['Card Name (German)'].str.replace('Check translation', '').str.strip()
 df['Card Name (Japanese)'] = df['Card Name (Japanese)'].str.replace('Check translation', '').str.strip()
 
-print(df['Property'].head())
+
+df.to_json('./Dataset/df_cleaned_output.json', orient='records')
